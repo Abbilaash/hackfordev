@@ -227,7 +227,7 @@ export default function RegisterPage() {
     setErrors(newErrors)
     return Object.keys(newErrors).length === 0
   }
-  const handleSubmit = async (): Promise<void> => {
+  const handleSubmit = async () => {
     // If you already have validation
     const newErrors = validateForm?.()
     if (newErrors && Object.keys(newErrors).length > 0) {
@@ -284,25 +284,17 @@ export default function RegisterPage() {
         body: formDataToSend,
       })
 
-      const result: { success?: boolean; message?: string } =
-        await response.json()
+      const result = await response.json()
 
       if (!response.ok) {
-        throw new Error(result.message || 'Registration failed')
+        throw new Error(result?.message || 'Registration failed')
       }
 
       alert('Registration submitted successfully!')
       setTimeout(() => (window.location.href = '/'), 1000)
-      // Optional reset
-      // setFormData(initialFormState);
     } catch (error) {
       console.error('Submit error:', error)
-
-      if (error instanceof Error) {
-        alert(error.message)
-      } else {
-        alert('Something went wrong while submitting.')
-      }
+      alert(error?.message || 'Something went wrong while submitting.')
     } finally {
       setIsSubmitting(false)
     }
