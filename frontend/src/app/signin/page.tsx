@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react'
 import { CheckCircle2, Loader2, ArrowLeft } from 'lucide-react'
-const API_URL = 'http://localhost:5000'
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL
 const Card = ({ children, className = '' }) => (
   <div
     className={`bg-gray-900 border border-gray-800 rounded-lg shadow-lg ${className}`}
@@ -128,7 +128,7 @@ export default function SignIn() {
     setFeedback({ type: '', message: '' })
 
     try {
-      const response = await fetch('/api/signin', {
+      const response = await fetch(`${API_BASE_URL}/api/signin`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(credentials),
@@ -162,7 +162,7 @@ export default function SignIn() {
     setFeedback({ type: '', message: '' })
 
     try {
-      const response = await fetch(`${API_URL}/api/send-otp`, {
+      const response = await fetch(`${API_BASE_URL}/api/send-otp`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email: resetData.email, purpose: 'reset' }),
@@ -193,7 +193,7 @@ export default function SignIn() {
     setFeedback({ type: '', message: '' })
 
     try {
-      const response = await fetch(`${API_URL}/api/reset-password`, {
+      const response = await fetch(`${API_BASE_URL}/api/reset-password`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(resetData),

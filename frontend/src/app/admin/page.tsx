@@ -1,5 +1,5 @@
 import React from 'react'
-
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL
 /* ================= TYPES ================= */
 
 interface TeamMember {
@@ -40,7 +40,7 @@ interface ApiResponse {
 /* ================= PAGE ================= */
 
 export default async function Page() {
-  const res = await fetch('http://localhost:5000/api/admin/all-data', {
+  const res = await fetch(`${API_BASE_URL}/api/admin/all-data`, {
     cache: 'no-store', // important for admin dashboards
   })
 

@@ -1,7 +1,7 @@
 'use client'
 import React, { useState, useEffect } from 'react'
 import { CheckCircle2, Loader2 } from 'lucide-react'
-const API_URL = 'http://localhost:5000'
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL
 const problemDomains = [
   'Sustainable Development and Climate Action',
   'Smart Cities and Urban Innovation',
@@ -279,7 +279,7 @@ export default function RegisterPage() {
       // -------------------------------
       // Send request
       // -------------------------------
-      const response = await fetch(`${API_URL}/api/registration`, {
+      const response = await fetch(`${API_BASE_URL}/api/registration`, {
         method: 'POST',
         body: formDataToSend,
       })

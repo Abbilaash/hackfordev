@@ -4,6 +4,7 @@ from flask_cors import CORS
 from flask_mail import Mail, Message
 from werkzeug.utils import secure_filename
 from werkzeug.security import generate_password_hash, check_password_hash
+from dotenv import load_dotenv
 import os
 import random
 from datetime import datetime
@@ -15,27 +16,29 @@ import cloudinary.api
 app = Flask(__name__)
 CORS(app) 
 
+load_dotenv()
+
 cloudinary.config(
-    cloud_name = 'dqsamywao',
-    api_key = '657295489615681',
-    api_secret = 'igJPVnGAHVBRZ3nauJ6XIPji__A',
-    secure = True
+    cloud_name=os.getenv("CLOUDINARY_CLOUD_NAME"),
+    api_key=os.getenv("CLOUDINARY_API_KEY"),
+    api_secret=os.getenv("CLOUDINARY_API_SECRET"),
+    secure=True
 )
 
 database_url = os.environ.get('DATABASE_URL') 
 if database_url and database_url.startswith("postgres://"):
     database_url = database_url.replace("postgres://", "postgresql://", 1)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://postgres:varun@localhost:5432/hackathon_db"
+app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv("DATABASE_URL")
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['UPLOAD_FOLDER'] = 'uploads'
 app.config['MAX_CONTENT_LENGTH'] = 100 * 1024 * 1024 
-app.config['MAIL_SERVER'] = 'smtp.gmail.com'
-app.config['MAIL_PORT'] = 465
+app.config['MAIL_SERVER'] = os.getenv("MAIL_SERVER")
+app.config['MAIL_PORT'] = int(os.getenv("MAIL_PORT"))
 app.config['MAIL_USE_TLS'] = False  
-app.config['MAIL_USE_SSL'] = True
-app.config['MAIL_USERNAME'] = 'codingclub@psgtech.ac.in'
-app.config['MAIL_PASSWORD'] = 'abfg smis bvxe saif'
+app.config['MAIL_USE_SSL'] = os.getenv("MAIL_USE_SSL") == "true"
+app.config['MAIL_USERNAME'] = os.getenv("MAIL_USERNAME")
+app.config['MAIL_PASSWORD'] = os.getenv("MAIL_PASSWORD")
 
 
 mail = Mail(app)
