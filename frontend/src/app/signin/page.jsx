@@ -140,7 +140,7 @@ export default function SignIn() {
         localStorage.setItem('userId', data.user_id)
         localStorage.setItem('userEmail', data.email)
         setFeedback({ type: 'success', message: 'Sign In Successful!' })
-        setTimeout(() => (window.location.href = '/dashboard'), 1000)
+        setTimeout(() => (window.location.href = '/'), 1000)
       } else {
         setFeedback({
           type: 'error',
