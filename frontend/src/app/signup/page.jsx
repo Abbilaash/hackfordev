@@ -48,7 +48,7 @@ const Button = ({
     >
       {children}
     </button>
-  )const API_URL = 'http://localhost:5000'
+  )
 }
 
 const Navbar = () => (
