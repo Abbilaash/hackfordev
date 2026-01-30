@@ -92,7 +92,11 @@ export default function SignIn() {
   const [credentials, setCredentials] = useState({ email: '', password: '' })
   const [resetData, setResetData] = useState({
     email: '',
-    otp: '',
+    otp: '', {isResetMode
+                ? resetStep === 1
+                  ? 'Enter your email to receive an OTP'
+                  : 'Enter OTP and new password'
+                : 'Sign in to access your AI4Dev localStorage.setItem('isLoggedIn', 'true')account'}
     newPassword: '',
   })
 
@@ -237,7 +241,7 @@ export default function SignIn() {
                 ? resetStep === 1
                   ? 'Enter your email to receive an OTP'
                   : 'Enter OTP and new password'
-                : 'Sign in to access your AI4Dev localStorage.setItem('isLoggedIn', 'true')account'}
+                : 'Sign in to access your AI4Dev account'}
             </p>
           </div>
 
