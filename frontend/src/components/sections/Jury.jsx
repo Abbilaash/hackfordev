@@ -53,7 +53,7 @@ const juryMembers = [
     role: 'Kaggle Grandmaster, Head of Research',
     company: 'Exa Protocol',
     linkedin: 'https://www.linkedin.com/in/usha-rengaraju/',
-    image: '/assets/usha.jpeg',
+    image: '/assets/Usha.jpeg',
   },
 ]
 
