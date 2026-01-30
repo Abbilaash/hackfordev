@@ -68,7 +68,7 @@ const Navbar = () => (
         <a
           href='/signin'
           className='text-sm font-medium text-gray-300 hover:text-white transition-colors'
-        >const API_URL = 'http://localhost:5000'
+        >
           Sign In
         </a>
       </div>
