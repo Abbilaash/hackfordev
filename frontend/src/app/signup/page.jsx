@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react'
 import { CheckCircle2, Loader2, ArrowLeft, Clock } from 'lucide-react'
 
-const API_URL = 'http://localhost:5000'
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL
 
 const Card = ({ children, className = '' }) => (
   <div
@@ -48,7 +48,7 @@ const Button = ({
     >
       {children}
     </button>
-  )
+  )const API_URL = 'http://localhost:5000'
 }
 
 const Navbar = () => (
@@ -68,7 +68,7 @@ const Navbar = () => (
         <a
           href='/signin'
           className='text-sm font-medium text-gray-300 hover:text-white transition-colors'
-        >
+        >const API_URL = 'http://localhost:5000'
           Sign In
         </a>
       </div>
@@ -131,7 +131,7 @@ export default function SignUp() {
     setLoading(true)
 
     try {
-      const response = await fetch(`${API_URL}/api/send-otp`, {
+      const response = await fetch(`${API_BASE_URL}/api/send-otp`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email }),
@@ -164,7 +164,7 @@ export default function SignUp() {
     setLoading(true)
 
     try {
-      const response = await fetch(`${API_URL}/api/send-otp`, {
+      const response = await fetch(`${API_BASE_URL}/api/send-otp`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email }),
@@ -207,7 +207,7 @@ export default function SignUp() {
     setLoading(true)
 
     try {
-      const response = await fetch(`${API_URL}/api/signup`, {
+      const response = await fetch(`${API_BASE_URL}/api/signup`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, otp, password }),
