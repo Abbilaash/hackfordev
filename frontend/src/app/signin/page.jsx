@@ -137,7 +137,7 @@ export default function SignIn() {
       const data = await response.json()
 
       if (response.ok) {
-        localStorage.setItem('userId', data.user_id)
+        localStorage.setItem('isLoggedIn', 'true')
         localStorage.setItem('userEmail', data.email)
         setFeedback({ type: 'success', message: 'Sign In Successful!' })
         setTimeout(() => (window.location.href = '/'), 1000)
@@ -237,7 +237,7 @@ export default function SignIn() {
                 ? resetStep === 1
                   ? 'Enter your email to receive an OTP'
                   : 'Enter OTP and new password'
-                : 'Sign in to access your AI4Dev account'}
+                : 'Sign in to access your AI4Dev localStorage.setItem('isLoggedIn', 'true')account'}
             </p>
           </div>
 
