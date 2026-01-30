@@ -13,13 +13,7 @@ const eventDetails = [
     color: "text-primary",
     bgColor: "bg-primary/10",
   },
-  {
-    icon: Timer,
-    title: "Duration",
-    content: "1 Day",
-    color: "text-accent",
-    bgColor: "bg-accent/10",
-  },
+  
   {
     icon: Clock,
     title: "Time",
@@ -46,14 +40,14 @@ export function EventDetails() {
   if (!mounted) return null;
 
   return (
-    <section id="details" className="py-20 bg-muted/30">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="details" className="py-20 bg-muted/30 ">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-12"
+          className="text-center mb-12 "
         >
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             Event Details
@@ -63,7 +57,7 @@ export function EventDetails() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 place-items-center place-content-center">
           {eventDetails.map((detail, index) => (
             <motion.div
               key={index}
@@ -71,6 +65,7 @@ export function EventDetails() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
+              className=""
             >
               <Card className="p-6 text-center h-full hover:shadow-lg transition-all duration-300">
                 <div

@@ -37,7 +37,7 @@ const rulesItems = [
   },
   {
     title: "Jury Decision",
-    content: "The decision of the jury panel will be final and binding.",
+    content: "The decision of the Advisory members panel will be final and binding.",
   },
 ];
 

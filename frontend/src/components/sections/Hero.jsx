@@ -233,15 +233,15 @@ export function Hero() {
           {[
             { label: "Total Prize Pool", value: "₹60,000" },
             { label: "Event Date", value: "Mar 28, 2026" },
-            { label: "Duration", value: "1 Day" },
+            { label: "Duration", value: "8 HOURS" },
             { label: "Mode", value: "Offline" },
           ].map((stat, index) => (
             <div
               key={index}
-              className="text-center p-6 rounded-2xl bg-white/50 backdrop-blur-sm border border-border/50 shadow-sm"
+              className="text-center p-6 rounded-2xl bg-muted backdrop-blur-sm border border-border/50 shadow-sm"
             >
               <p className="  text-2xl font-bold text-white">{stat.value}</p>
-              <p className="text-lg  mt-1 text-black">{stat.label}</p>
+              <p className="text-lg  mt-1 text-white/50">{stat.label}</p>
             </div>
           ))}
         </motion.div>

@@ -74,7 +74,7 @@ export function EventOverview() {
               icon: "🚀",
               title: "Innovation",
               description:
-                "Build AI solutions with TRL 3+ proof of concept",
+                "Build AI solutions with TRL 3+ ",
             },
           ].map((item, index) => (
             <div

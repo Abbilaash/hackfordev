@@ -47,7 +47,7 @@ export function HackathonTimeline() {
                   <span className="text-white font-bold">1</span>
                 </div>
                 <h3 className="text-2xl font-bold text-primary">
-                  Round I – Online Shortlisting
+                  Round I – Preliminary Round
                 </h3>
               </div>
 
@@ -146,7 +146,7 @@ export function HackathonTimeline() {
                       • Presentation materials
                     </li>
                     <li className="text-muted-foreground">
-                      • Team introduction and分工
+                      • Team introduction and innovation highlights
                     </li>
                   </ul>
                 </div>

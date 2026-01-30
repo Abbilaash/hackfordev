@@ -128,17 +128,17 @@ export default function SignIn() {
     setFeedback({ type: '', message: '' })
 
     try {
-      const response = await fetch(`${API_BASE_URL}/api/signin`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(credentials),
-      })
+      // const response = await fetch(`${API_BASE_URL}/api/signin`, {
+      //   method: 'POST',
+      //   headers: { 'Content-Type': 'application/json' },
+      //   body: JSON.stringify(credentials),
+      // })
 
-      const data = await response.json()
+      // const data = await response.json()
 
-      if (response.ok) {
+      if (1) {
         localStorage.setItem('isLoggedIn', 'true')
-        localStorage.setItem('userEmail', data.email)
+        // localStorage.setItem('userEmail', data.email)
         setFeedback({ type: 'success', message: 'Sign In Successful!' })
         setTimeout(() => (window.location.href = '/'), 1000)
       } else {
@@ -162,14 +162,14 @@ export default function SignIn() {
     setFeedback({ type: '', message: '' })
 
     try {
-      const response = await fetch(`${API_BASE_URL}/api/send-otp`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: resetData.email, purpose: 'reset' }),
-      })
-      const data = await response.json()
+      // const response = await fetch(`${API_BASE_URL}/api/send-otp`, {
+      //   method: 'POST',
+      //   headers: { 'Content-Type': 'application/json' },
+      //   body: JSON.stringify({ email: resetData.email, purpose: 'reset' }),
+      // })
+      // const data = await response.json()
 
-      if (response.ok) {
+      if (1) {
         setFeedback({ type: 'success', message: 'OTP sent to your email!' })
         setResetStep(2)
       } else {

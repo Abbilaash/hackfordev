@@ -75,16 +75,16 @@ const facultyCoordinators = [
 
 const leadCoordinators = [
   { name: 'Harini P', company: 'CSE' },
-  { name: 'Muralitharan', company: 'BME' },
-  { name: 'Irudaya Paulin', company: 'Production' },
-  { name: 'Abilash', company: 'AI ML' },
-  { name: 'Sai Kabilan', company: 'ECE' },
-  { name: 'Swetha', company: 'ICE' },
-  { name: 'Yashini', company: 'FT' },
+  { name: 'Muralitharan A', company: 'BME' },
+  { name: 'Irudaya Paulin G', company: 'Production' },
+  { name: 'Abilash A T', company: 'AI ML' },
+  { name: 'Sai Kabilan A', company: 'ECE' },
+  { name: 'Swetha A', company: 'ICE' },
+  { name: 'Yashini N', company: 'FT' },
 ]
 
 const associateCoordinators = [
-  { name: 'Anish', company: 'Mech' },
+  { name: 'Anish J S', company: 'Mech' },
   { name: 'Nithiish S D', company: 'AMCS' },
   { name: 'Praveen R P', company: 'CSE' },
 ]
@@ -189,11 +189,11 @@ export function Jury() {
   if (!mounted) return null
 
   return (
-    <div className='py-20 md:py-24 bg-slate-950 space-y-28 md:space-y-32'>
+    <div className='py-20 md:py-24 bg-slate-950 space-y-28 md:space-y-32 ' id="jury">
       {/* Jury & Industry Experts */}
       <section className='max-w-7xl mx-auto px-5 sm:px-6 lg:px-8'>
         <SectionHeader
-          title='Jury & Industry Experts'
+          title='Jury & Advisory Members'
           subtitle='Learn from and be evaluated by leaders shaping the future of AI & technology'
         />
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8'>

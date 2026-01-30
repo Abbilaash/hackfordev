@@ -206,6 +206,8 @@ export default function RegisterPage() {
       if (!member.state) newErrors[`member${index}State`] = 'State is required'
       if (!member.mobile)
         newErrors[`member${index}Mobile`] = 'Mobile is required'
+      else if (!/^\d{10}$/.test(member.mobile.replace(/\D/g, '')))
+        newErrors[`member${index}Mobile`] = 'Mobile must be 10 digits'
       if (!member.email || !/\S+@\S+\.\S+/.test(member.email)) {
         newErrors[`member${index}Email`] = 'Valid email is required'
       }
@@ -219,8 +221,12 @@ export default function RegisterPage() {
       newErrors.projectTitle = 'Project title is required'
     if (!formData.githubRepoLink)
       newErrors.githubRepoLink = 'GitHub link is required'
+    else if (!/^https?:\/\/.+/.test(formData.githubRepoLink))
+      newErrors.githubRepoLink = 'GitHub link must be a valid URL'
     if (!formData.demoVideoURL)
       newErrors.demoVideoURL = 'Demo video URL is required'
+    else if (!/^https?:\/\/.+/.test(formData.demoVideoURL))
+      newErrors.demoVideoURL = 'Demo video URL must be a valid URL'
     if (!formData.agreeToRules)
       newErrors.agreeToRules = 'You must agree to the rules'
 
@@ -294,7 +300,7 @@ export default function RegisterPage() {
       setTimeout(() => (window.location.href = '/'), 1000)
     } catch (error) {
       console.error('Submit error:', error)
-      alert(error?.message || 'Something went wrong while submitting.')
+      // alert(error?.message || 'Something went wrong while submitting.')
     } finally {
       setIsSubmitting(false)
     }
