@@ -141,7 +141,7 @@ const MemberCard = ({ member, index, isStudent = false, isstaff = false }) => (
 
         {/* Text content */}
         <div className='flex-1 min-w-0'>
-          <h3 className='font-semibold text-slate-100 text-lg leading-tight truncate'>
+          <h3 className='font-semibold text-slate-100 text-lg leading-tight wrap-break-word'>
             {member.name}
           </h3>
 
@@ -153,7 +153,7 @@ const MemberCard = ({ member, index, isStudent = false, isstaff = false }) => (
 
           <div className='flex items-center gap-1.5 text-sm text-slate-400 mt-1.5'>
             <Building2 className='w-4 h-4 flex-shrink-0' />
-            <span className='truncate'>{member.company}</span>
+            <span className='break-words'>{member.company}</span>
           </div>
         </div>
       </div>
@@ -219,7 +219,7 @@ export function Jury() {
       {/* Lead Coordinators */}
       <section className='max-w-7xl mx-auto px-5 sm:px-6 lg:px-8'>
         <SectionHeader title='Lead Coordinators' />
-        <div className='grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5 lg:gap-6'>
+        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6'>
           {leadCoordinators.map((m, i) => (
             <MemberCard key={`lead-${i}`} member={m} index={i} isStudent />
           ))}
@@ -229,7 +229,7 @@ export function Jury() {
       {/* Associate Coordinators */}
       <section className='max-w-7xl mx-auto px-5 sm:px-6 lg:px-8'>
         <SectionHeader title='Associate Coordinators' />
-        <div className='grid grid-cols-1  sm:grid-cols-3 lg:grid-cols-4 gap-5 lg:gap-6 '>
+        <div className='grid grid-cols-1  sm:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6 '>
           {associateCoordinators.map((m, i) => (
             <MemberCard key={`assoc-${i}`} member={m} index={i} isStudent />
           ))}
