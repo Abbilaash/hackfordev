@@ -12,6 +12,10 @@ import json
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
+import smtplib
+from email.message import EmailMessage
+
+
 
 app = Flask(__name__)
 CORS(app) 
@@ -34,11 +38,12 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['UPLOAD_FOLDER'] = 'uploads'
 app.config['MAX_CONTENT_LENGTH'] = 100 * 1024 * 1024 
 app.config['MAIL_SERVER'] = os.getenv("MAIL_SERVER")
-app.config['MAIL_PORT'] = int(os.getenv("MAIL_PORT"))
+app.config['MAIL_PORT'] = int(os.getenv("MAIL_PORT",465))
 app.config['MAIL_USE_TLS'] = False  
-app.config['MAIL_USE_SSL'] = os.getenv("MAIL_USE_SSL") == "true"
-app.config['MAIL_USERNAME'] = os.getenv("MAIL_USERNAME")
+app.config['MAIL_USE_SSL'] = True
+app.config['MAIL_USERNAME'] = os.environ.get("MAIL_USERNAME")
 app.config['MAIL_PASSWORD'] = os.getenv("MAIL_PASSWORD")
+app.config['MAIL_DEFAULT_SENDER'] = os.getenv("MAIL_USERNAME")
 
 
 mail = Mail(app)
@@ -133,6 +138,9 @@ class HackathonRegistration(db.Model):
     # ----------------------------
     submitted_at = db.Column(db.DateTime, default=datetime.utcnow)
 
+with app.app_context():
+    db.create_all()
+
 # --- ROUTES ---
 
 @app.route('/setup-db')
@@ -143,6 +151,7 @@ def setup_db():
 
 @app.route('/api/send-otp', methods=['POST'])
 def send_otp():
+    print(app.config['MAIL_USERNAME'],os.environ.get("MAIL_USERNAME"), "sddad")
     try:
         print("JSON RECEIVED:", request.json)
 
@@ -182,6 +191,8 @@ def send_otp():
             'error': str(e)
         }), 500
     
+
+
 @app.route('/api/reset-password', methods=['POST'])
 def reset_password():
     data = request.json

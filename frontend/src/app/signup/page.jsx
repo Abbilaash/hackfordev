@@ -95,7 +95,7 @@ export default function SignUp() {
   const [password, setPassword] = useState('')
 
   // OTP Timer State - NEW
-  const [otpTimer, setOtpTimer] = useState(30)
+  const [otpTimer, setOtpTimer] = useState(180)
   const [canResend, setCanResend] = useState(false)
 
   // OTP Countdown Timer - NEW
@@ -142,7 +142,7 @@ export default function SignUp() {
       if (response.ok) {
         setFeedback({ type: 'success', message: 'OTP sent! Check your inbox.' })
         setStep(2)
-        setOtpTimer(30) // Reset timer - NEW
+        setOtpTimer(180) // Reset timer - NEW
         setCanResend(false)
       } else {
         setFeedback({
@@ -177,7 +177,7 @@ export default function SignUp() {
           type: 'success',
           message: 'New OTP sent! Check your inbox.',
         })
-        setOtpTimer(30)
+        setOtpTimer(180)
         setCanResend(false)
         setOtp('')
       } else {
@@ -390,7 +390,7 @@ export default function SignUp() {
                     setStep(1)
                     setOtp('')
                     setPassword('')
-                    setOtpTimer(30)
+                    setOtpTimer(180)
                     setCanResend(false)
                     setFeedback({ type: '', message: '' })
                   }}
