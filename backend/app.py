@@ -149,7 +149,7 @@ def setup_db():
         db.create_all()
     return "Database Tables Created Successfully!"
 
-@app.route('/api/send-otp', methods=['POST'])
+@app.route('/api/send-otp', methods=['POST', 'OPTIONS'])
 def send_otp():
     print(app.config['MAIL_USERNAME'],os.environ.get("MAIL_USERNAME"), "sddad")
     try:
