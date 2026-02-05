@@ -99,7 +99,7 @@ const Navbar = () => {
 const Footer = () => (
   <footer className='bg-gray-900 border-t border-gray-800 py-8 mt-12'>
     <div className='container mx-auto px-4 text-center text-gray-400'>
-      <p>© 2026 AI4Dev. All rights reserved.</p>
+      <p>© 2026 AI4Dev - PSG Tech. All rights reserved.</p>
     </div>
   </footer>
 )
