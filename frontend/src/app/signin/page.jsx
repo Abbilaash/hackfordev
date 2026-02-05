@@ -52,9 +52,12 @@ const Button = ({
 const Navbar = () => (
   <nav className='fixed top-0 left-0 right-0 z-50 bg-gray-900/95 backdrop-blur border-b border-gray-800'>
     <div className='container mx-auto px-4 h-16 flex items-center justify-between'>
-      <div className='text-xl font-bold text-white flex gap-4 items-center'>
+      <div className='flex gap-4 items-center'>
         <img src='/assets/psgtechlogo.jpeg' alt='' width='40px' height='30px' />
-        <p>AI4Dev '26</p>
+        <div className='flex flex-col'>
+          <p className='text-base font-bold text-white'>PSG College Of Technology</p>
+          <p className='text-sm font-semibold text-gray-300'>Presents AI4Dev '26</p>
+        </div>
       </div>
       <div className='flex items-center gap-4'>
         <a
@@ -77,7 +80,7 @@ const Navbar = () => (
 const Footer = () => (
   <footer className='bg-gray-900 border-t border-gray-800 py-8 mt-auto'>
     <div className='container mx-auto px-4 text-center text-gray-400'>
-      <p>© 2026 AI4Dev. All rights reserved.</p>
+      <p>© 2026 AI4Dev - PSG Tech. All rights reserved.</p>
     </div>
   </footer>
 )

@@ -85,18 +85,23 @@ export function Footer() {
               Contact Information
             </h4>
             <ul className="space-y-2 text-sm">
+              <li>
+                <div className="font-medium text-foreground">
+                  PSG College Of Technology
+                </div>
+                <div className="text-muted-foreground">Coding Club</div>
+              </li>
               <li className="text-muted-foreground">
                 <span className="font-medium text-foreground">Harini P:</span>{" "}
                 6366203232
               </li>
               <li className="text-muted-foreground">
-                <span className="font-medium text-foreground">Giriprakash:</span>{" "}
+                <span className="font-medium text-foreground">
+                  Giriprakash:
+                </span>{" "}
                 7695984737
               </li>
             </ul>
-            <p className="text-xs text-muted-foreground">
-              Organized by: <span className="font-medium">Coding Club</span>
-            </p>
           </div>
         </div>
 
@@ -108,7 +113,7 @@ export function Footer() {
             </p>
             <p className="text-sm text-muted-foreground">
               Built with ❤️ by{" "}
-              <span className="font-medium text-foreground">Coding Club</span>
+              <span className="font-medium text-foreground">PSG Tech</span>
             </p>
           </div>
         </div>
@@ -116,4 +121,3 @@ export function Footer() {
     </footer>
   );
 }
-

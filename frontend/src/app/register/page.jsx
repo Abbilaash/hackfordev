@@ -70,7 +70,13 @@ const Navbar = () => {
   return (
     <nav className='fixed top-0 left-0 right-0 z-50 bg-gray-900/95 backdrop-blur border-b border-gray-800'>
       <div className='container mx-auto px-4 h-16 flex items-center justify-between'>
-        <div className='text-xl font-bold text-white'>AI4Dev '26</div>
+        <div className='flex gap-4 items-center'>
+          <img src='/assets/psgtechlogo.jpeg' alt='' width='40px' height='30px' />
+          <div className='flex flex-col'>
+            <p className='text-base font-bold text-white'>PSG College Of Technology</p>
+            <p className='text-sm font-semibold text-gray-300'>Presents AI4Dev '26</p>
+          </div>
+        </div>
         <div className='flex items-center gap-4'>
           <a
             href='/'

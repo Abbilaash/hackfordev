@@ -77,7 +77,7 @@ const leadCoordinators = [
   { name: 'Harini P', company: 'CSE' },
   { name: 'Muralitharan A', company: 'BME' },
   { name: 'Irudaya Paulin G', company: 'Production' },
-  { name: 'Abilash A T', company: 'AI ML' },
+  { name: 'A T Abbilaash', company: 'CSE (AI & ML)' },
   { name: 'Sai Kabilan A', company: 'ECE' },
   { name: 'Swetha A', company: 'ICE' },
   { name: 'Yashini N', company: 'FT' },
