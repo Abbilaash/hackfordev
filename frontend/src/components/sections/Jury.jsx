@@ -29,20 +29,20 @@ const juryMembers = [
     image: '/assets/madhusudhan.png',
   },
   {
-    name: 'Dr. Srinivasan Aruchamy',
+    name: 'Dr. C. S. Saravana Kumar',
     role: 'Principal Scientist',
     company: 'CSIR-CMERI',
     linkedin: 'https://www.linkedin.com/in/dr-srinivasan-aruchamy/',
     image: '/assets/srinvasan.png',
   },
   {
-    name: 'Mr. Azad Sheriff',
+    name: 'Dr. Srinivasan Aruchamy',
     role: 'Director / Software Architect',
     company: 'Octa, Bangalore',
     image: '/assets/azadsheriff.png',
   },
   {
-    name: 'Dr. C. S. Saravana Kumar',
+    name: 'Mr. Azad Sheriff',
     role: 'Senior Software Architect',
     company: 'Bosch Global Software Technologies',
     linkedin: 'https://www.linkedin.com/in/dr-saravana-kumar-c-s/',
